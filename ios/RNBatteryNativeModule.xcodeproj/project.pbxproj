@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RNBatteryNativeModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNBatteryNativeModuleTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-RNBatteryNativeModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-RNBatteryNativeModule.a */; };
+		111511E928C6E15600A7419A /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111511E828C6E15600A7419A /* Calendar.swift */; };
+		111511EC28C6E17E00A7419A /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 111511EB28C6E17E00A7419A /* Calendar.m */; };
+		11BEFC5B28C58446002CF713 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BEFC5A28C58446002CF713 /* Battery.swift */; };
+		11BEFC5D28C5849A002CF713 /* Battery.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEFC5C28C5849A002CF713 /* Battery.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -30,6 +34,12 @@
 		00E356EE1AD99517003FC87E /* RNBatteryNativeModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNBatteryNativeModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RNBatteryNativeModuleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNBatteryNativeModuleTests.m; sourceTree = "<group>"; };
+		111511E828C6E15600A7419A /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		111511EA28C6E16500A7419A /* Calendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
+		111511EB28C6E17E00A7419A /* Calendar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Calendar.m; sourceTree = "<group>"; };
+		11BEFC5928C58446002CF713 /* RNBatteryNativeModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNBatteryNativeModule-Bridging-Header.h"; sourceTree = "<group>"; };
+		11BEFC5A28C58446002CF713 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		11BEFC5C28C5849A002CF713 /* Battery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Battery.m; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* RNBatteryNativeModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNBatteryNativeModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RNBatteryNativeModule/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = RNBatteryNativeModule/AppDelegate.mm; sourceTree = "<group>"; };
@@ -92,6 +102,12 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				11BEFC5A28C58446002CF713 /* Battery.swift */,
+				11BEFC5928C58446002CF713 /* RNBatteryNativeModule-Bridging-Header.h */,
+				11BEFC5C28C5849A002CF713 /* Battery.m */,
+				111511E828C6E15600A7419A /* Calendar.swift */,
+				111511EA28C6E16500A7419A /* Calendar.h */,
+				111511EB28C6E17E00A7419A /* Calendar.m */,
 			);
 			name = RNBatteryNativeModule;
 			sourceTree = "<group>";
@@ -200,14 +216,14 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1310;
 					};
 				};
 			};
@@ -412,8 +428,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BEFC5B28C58446002CF713 /* Battery.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				111511EC28C6E17E00A7419A /* Calendar.m in Sources */,
+				11BEFC5D28C5849A002CF713 /* Battery.m in Sources */,
+				111511E928C6E15600A7419A /* Calendar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-RNBatteryNativeModule-RNBatteryNativeModuleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -459,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-RNBatteryNativeModule-RNBatteryNativeModuleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = RNBatteryNativeModuleTests/Info.plist;
@@ -486,6 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = USY585ZHLU;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RNBatteryNativeModule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,6 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNBatteryNativeModule;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNBatteryNativeModule-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -512,6 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = USY585ZHLU;
 				INFOPLIST_FILE = RNBatteryNativeModule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,6 +549,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNBatteryNativeModule;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNBatteryNativeModule-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -662,6 +688,7 @@
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
