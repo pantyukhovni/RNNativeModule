@@ -6,8 +6,8 @@ import React
 @objc(Calendar)
 class Calendar: NSObject
 {
-  @objc
-  func addEventToCalendar(_ titleEvent: String) {
+  @objc(addEventToCalendar:startDate:endDate:resolve:reject:)
+  func addEventToCalendar(_ titleEvent: String, startDate: NSNumber, endDate: NSNumber, resolve:  @escaping RCTPromiseResolveBlock, reject:  @escaping RCTPromiseRejectBlock) {
     let eventStore = EKEventStore();
     
     eventStore.requestAccess(to: .event, completion: {(granted, error) in
@@ -20,12 +20,13 @@ class Calendar: NSObject
         event.calendar = eventStore.defaultCalendarForNewEvents
         
         do {
-          try eventStore.save(event, span: .thisEvent)
-        } catch {
-          
+          try eventStore.save(event, span: .thisEvent);
+          resolve("Событие успешно добавлено в календарь");
+        } catch let err as NSError{
+          reject("Error", "Не удалось добавить событие в календарь", err);
         }
       } else {
-        
+        reject("Permission_Error", "Не удалось получить доступ к календарю", error);
       }
     })
   }

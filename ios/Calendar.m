@@ -7,5 +7,10 @@
 
 
 @interface RCT_EXTERN_MODULE(Calendar, NSObject)
-RCT_EXTERN_METHOD(addEventToCalendar: (NSString *)titleEvent)
+RCT_EXTERN_METHOD(addEventToCalendar: (NSString *)titleEvent
+                  startDate: (nonnull NSNumber)startDate
+                  endDate: (nonnull NSNumber)endDate
+                  resolve:(RCTPromiseResolveBlock) resolve
+                  reject: (RCTPromiseRejectBlock)reject)
 @end
+
